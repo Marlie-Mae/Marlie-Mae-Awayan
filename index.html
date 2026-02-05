@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marlie Mae B. Awayan | Portfolio</title>
+
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6062/6062646.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ================= DARK MODE VARIABLES ================= */
+        :root {
+            --bg-body: #f7f8fc;
+            --bg-card: #fff;
+            --text-main: #333;
+            --text-muted: #666;
+            --border-color: #e1e1e1;
+            --hr-color: #ddd;
+            --accent-blue: #3556d8;
+            --cert-bg: #fdfdfd;
+        }
+
+        [data-theme="dark"] {
+            --bg-body: #121212;
+            --bg-card: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-muted: #aaaaaa;
+            --border-color: #333;
+            --hr-color: #333;
+            --accent-blue: #5e7df3;
+            --cert-bg: #252525;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* Dark Mode Toggle Button */
+        .theme-switch {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            cursor: pointer;
+            padding: 10px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            margin: 10px auto;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* ================= HEADER ================= */
+        .profile-header {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .profile-header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            object-fit: cover;
+        }
+
+        .profile-info h1 {
+            color: var(--accent-blue);
+            font-size: 24px;
+        }
+
+        .profile-info p {
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .profile-info .location {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .buttons {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 14px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .btn.dark {
+            background: #000;
+            color: #fff;
+            border: none;
+        }
+
+        [data-theme="dark"] .btn.dark {
+            background: #fff;
+            color: #000;
+        }
+
+        hr {
+            margin: 25px 0;
+            border: none;
+            height: 1px;
+            background: var(--hr-color);
+        }
+
+        /* ================= GRID ================= */
+        .grid {
+            display: grid;
+            grid-template-columns: 2fr 1.3fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 10px;
+            padding: 18px;
+            border: 1px solid var(--border-color);
+            height: fit-content;
+        }
+
+        .card h2 {
+            font-size: 16px;
+            color: var(--accent-blue);
+            margin-bottom: 10px;
+        }
+
+        /* ================= SKILLS TABLE ================= */
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        .tech-table th, .tech-table td {
+            border: 1px solid var(--accent-blue);
+            padding: 12px;
+            text-align: left;
+            color: var(--text-main);
+        }
+
+        .tech-table th {
+            background-color: var(--bg-card);
+        }
+
+        .cat-name {
+            font-weight: bold;
+            width: 30%;
+            vertical-align: middle;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin: 2px;
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+        .badge i { margin-right: 5px; }
+
+        /* Technology Colors */
+        .html { background-color: #E34F26; color: white; }
+        .css { background-color: #1572B6; color: white; }
+        .js { background-color: #F7DF1E; color: black; }
+        .php { background-color: #777BB4; color: white; }
+        .gas { background-color: #4285F4; color: white; }
+        .vscode { background-color: #007ACC; color: white; }
+        .eclipse { background-color: #2C2255; color: white; }
+        .canva { background-color: #00C4CC; color: white; }
+        .figma { background-color: #F24E1E; color: white; }
+        .mysql { background-color: #00758F; color: white; }
+
+        /* ================= PROJECTS ================= */
+        .project {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+
+        .project img {
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        .project p {
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        .tags {
+            margin-top: 5px;
+        }
+
+        .btn-linkedin { background-color: #0077b5 !important; color: white !important; border: none; }
+        .btn-github { background-color: #24292e !important; color: white !important; border: none; }
+        .btn-facebook { background-color: #1877f2 !important; color: white !important; border: none; }
+        .btn-email { background-color: #d44638 !important; color: white !important; border: none; }
+
+        /* ================= CERTIFICATIONS & LISTS ================= */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+        }
+
+        .cert-item {
+            background: var(--cert-bg);
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 13px;
+        }
+
+        .cert-item:hover {
+            border-color: #007ACC;
+            background: #f0faff;
+            transform: translateY(-2px);
+        }
+
+        [data-theme="dark"] .cert-item:hover {
+            background: #1a2a33;
+        }
+
+        .cert-item i {
+            float: right;
+            color: #007ACC;
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.85);
+            backdrop-filter: blur(5px);
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            animation: zoom 0.3s;
+            overflow-x: scroll;
+        }
+
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            text-align: center;
+            color: white;
+            padding: 15px 0;
+            font-weight: bold;
+        }
+
+        .no-scroll {
+            overflow: hidden;
+            height: 100%;
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0.8)} 
+            to {transform:scale(1)}
+        }
+
+        .close {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 40px;
+            padding-bottom: 20px;
+            color: var(--text-muted);
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+            
+            .project {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="theme-switch" id="themeToggle" title="Toggle Dark Mode">
+        <i class="fa-solid fa-moon"></i>
+    </div>
+
+    <div class="profile-header">
+        <img src="images/profile.png" alt="Marlie Mae B. Awayan">
+        <div class="profile-info">
+            <h1>Marlie Mae B. Awayan</h1>
+            <p class="location"><i class="fa fa-location-dot"></i> Hulo, Mandaluyong Philippines</p>
+            <p><strong>Web Developer</strong></p>
+
+            <div class="buttons">
+                <a href="Resume_Awayan.pdf" download="Marlie_Awayan_Resume.pdf" style="text-decoration: none;">
+                    <button class="btn dark"><i class="fa fa-download"></i> Download Resume</button>
+                </a>
+
+                <a href="mailto:awayanmarlie.mae@gmail.com" style="text-decoration: none;">
+                    <button class="btn"><i class="fa fa-envelope"></i> Send Email</button>
+                </a>
+
+                <a href="tel:+639500576633" style="text-decoration: none;">
+                    <button class="btn"><i class="fa fa-phone"></i> Call Me</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="grid">
+
+        <div>
+            <div class="card">
+                <h2><i class="fa-solid fa-address-card"></i> ABOUT</h2>
+                <p style="font-size:13px; line-height: 1.6;">
+                    I am a BSIT student currently finishing my OJT and ready to transition into a full-time IT role. 
+                    I specialize in building functional web solutions using PHP, MySQL, and Google Apps Script. 
+                    I’m a reliable and detail-oriented person who enjoys turning design ideas—starting with 
+                    basic wireframes in Figma—into working systems. My goal is to use my technical skills 
+                    and dedication to help a team build great projects.
+                </p>
+            </div>
+
+            <br>
+
+            <div class="card">
+                <h2><i class="fa-solid fa-wrench"></i> Tech Stack & Tools</h2>
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Tools & Languages</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="cat-name">Web Dev</td>
+                            <td>
+                                <span class="badge html"><i class="fa-brands fa-html5"></i> HTML5</span>
+                                <span class="badge css"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                                <span class="badge js"><i class="fa-brands fa-js"></i> JavaScript</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cat-name">Backend</td>
+                            <td>
+                                <span class="badge php"><i class="fa-brands fa-php"></i> PHP</span>
+                                <span class="badge mysql"><i class="fa-solid fa-database"></i> MySQL</span>
+                                <span class="badge gas"><i class="fa-solid fa-code"></i> Google Apps Script</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cat-name">Software</td>
+                            <td>
+                                <span class="badge vscode">VS Code</span>
+                                <span class="badge eclipse">Eclipse</span>
+                                <span class="badge canva">Canva</span>
+                                <span class="badge figma">Figma</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+
+            <div class="card">
+                <h2><i class="fas fa-laptop-code"></i> PROJECTS</h2>
+                
+                <div class="project">
+                    <a href="https://onsmiledentalclinic.site/admin/login.php" target="_blank" title="View Project">
+                        <img src="images/capstone_project.jpg" alt="Capstone Project" style="cursor: pointer; transition: 0.3s;">
+                    </a>
+                    <div>
+                        <strong>OnSmile: A Dynamic Web Based Solutions for Dental Enhancements Operations | Capstone Project</strong>
+                        <div class="tags">
+                            <span class="badge php">PHP</span>
+                            <span class="badge html">HTML</span>
+                            <span class="badge mysql">MySQL</span>
+                            <span class="badge js">JavaScript</span>
+                        </div>
+                        <p>A full-stack solution for clinics to manage patient records and automate appointment bookings, reducing scheduling conflicts.</p>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <a href="https://script.google.com/macros/s/AKfycbxgr3xTdzixxahRod6vWm9IXSXKxivhDlCNrYw512pwskWpq99ha6DMFCW5e85HtI7R/exec" target="_blank" title="View Project">
+                        <img src="images/attendance_system.JPG" alt="Attendance System Project" style="cursor: pointer; transition: 0.3s;">
+                    </a>
+                    <div>
+                        <strong>PCN Time In Time Out: Automated Attendance Tracking System</strong>
+                        <div class="tags">
+                            <span class="badge gas">Apps Script</span>
+                            <span class="badge html">HTML</span>
+                            <span class="badge js">JavaScript</span>
+                        </div>
+                        <p>A Google Sheets-integrated solution for real-time employee "Time In/Time Out" monitoring and reporting.</p>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <a href="https://script.google.com/macros/s/AKfycbwlKyJT4UQgEtkQvx6_ngHJVQ8TRVMuSItE6Hq6tUC794mZ0V9hdl73LkBDDx3kNmwK/exec" target="_blank" title="View Project">
+                        <img src="images/web_chat.JPG" alt="Web Chat Project" style="cursor: pointer; transition: 0.3s;">
+                    </a>
+                    <div>
+                        <strong>PrivateLine: Real-Time Web Chat</strong>
+                        <div class="tags">
+                            <span class="badge gas">Apps Script</span>
+                            <span class="badge html">HTML</span>
+                            <span class="badge js">JavaScript</span>
+                        </div>
+                        <p>A secure web-based communication tool designed for low-latency messaging and private data handling.</p>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <a href="#" target="_blank" title="View Project">
+                        <img src="images/inventory_system.JPG" alt="Inventory System Project" style="cursor: pointer; transition: 0.3s;">
+                    </a>
+                    <div>
+                        <strong>PCN Equipment Inventory System</strong>
+                        <div class="tags">
+                            <span class="badge php">PHP</span>
+                            <span class="badge mysql">MySQL</span>
+                            <span class="badge html">HTML</span>
+                            <span class="badge js">JavaScript</span>
+                        </div>
+                        <p>A web-based system designed to track company assets, manage equipment assignments, and generate real-time inventory reports.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+            <div class="card">
+                <h2><i class="fas fa-graduation-cap"></i> EDUCATION</h2>
+                <p style="font-size:13px;">
+                    <strong>Bachelor of Information Technology</strong><br>
+                    Arellano University Plaridel Campus<br>
+                    August 2022 - April 2026
+                </p>
+            </div>
+
+            <br>
+
+            <div class="card">
+                <h2><i class="fas fa-briefcase"></i> ON THE JOB TRAINING</h2>
+                <p style="font-size:13px; margin-bottom: 8px;">
+                    <strong>Web Development Intern - PCN Promopro Inc</strong><br>
+                    December 2025 - March 2026
+                </p>
+                <ul style="padding-left:18px; font-size:12px;">
+                    <li>Developed a <b>PCN Asset Inventory System</b> in PHP and <b>Time In Time Out Attendance System</b> using <b>Google Apps Script</b>.</li>
+                    <li>Conducted <b>System Maintenance</b> and hardware troubleshooting for office workstations.</li>
+                    <li>Collaborated with the IT team to provide <b>Technical Support</b> and resolve network issues.</li>                 
+                </ul>
+            </div>
+
+            <br>
+
+            <div class="card">
+                <h2><i class="fas fa-award"></i> CERTIFICATIONS</h2>
+                <div class="cert-grid">
+                    <div class="cert-item" onclick="openModal('images/excel_cert.jpg', 'Microsoft Office Specialist: Excel Associate - Data Analytics Philippines')">
+                        <strong>MOS: Excel Associate Certification</strong>
+                        <p>Data Analytics Philippines • 2025 </p>
+                    </div>
+
+                    <div class="cert-item" onclick="openModal('images/cisco_ai.jpg', 'Introduction to Modern AI - CISCO')">
+                        <strong>Introduction to Modern AI</strong>
+                        <p>CISCO • 2025  </p>
+                    </div>
+                    
+                    <div class="cert-item" onclick="openModal('images/mysql_cert.jpg', 'Querying Fundamentals with MySQL - DAP')">
+                        <strong>MySQL Essentials For Beginners</strong>
+                        <p>DAP • 2024  </p>
+                    </div>
+                    <div class="cert-item" onclick="openModal('images/fcc_web.jpeg', 'Responsive Web Design - freeCodeCamp')">
+                        <strong>Responsive Web Design</strong>
+                        <p>freeCodeCamp • 2024  </p>
+                    </div>
+                    <div class="cert-item" onclick="openModal('images/usaid_ethics.jpg', 'AI Ethics and Governance - USAID')">
+                        <strong>AI Ethics and Governance</strong>
+                        <p>USAID • 2024  </p>
+                    </div>
+                    <div class="cert-item" onclick="openModal('images/dict_hacked.jpg', 'Counter-Act when Hacked - DICT')">
+                        <strong>Counter-Act when Hacked</strong>
+                        <p>DICT • 2024  </p>
+                    </div>
+                    <div class="cert-item" onclick="openModal('images/github_dict.jpg', 'Introduction to GitHub Actions - DICT')">
+                        <strong>Introduction to GitHub Actions</strong>
+                        <p>DICT • 2024  </p>
+                    </div>
+                    <div class="cert-item" onclick="openModal('images/dost_hack.jpg', 'Hack-Proofing Your Digital World - DOST')">
+                        <strong>Hack-Proofing Digital World</strong>
+                        <p>DOST • 2024  </p>
+                    </div>
+                    <div class="cert-item" onclick="openModal('images/greatlearning.jpg', 'Programming Basics - GreatLearning')">
+                        <strong>Programming Basics</strong>
+                        <p>GreatLearning • 2024  </p>
+                    </div>
+                    <div class="cert-item" onclick="openModal('images/cloud_usaid.jpg', 'Cloud Computing Webinar - USAID')">
+                        <strong>Cloud Computing Webinar</strong>
+                        <p>USAID • 2024  </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="certModal" class="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img class="modal-content" id="imgFull">
+                <div id="caption"></div>
+            </div>
+
+            <br>
+
+            <div class="card">
+                <h2><i class="fas fa-share-nodes"></i> SOCIALS & LINKS</h2>
+                <div class="buttons">
+                    <a href="https://www.linkedin.com/in/marlie-mae-awayan-73186237b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" style="text-decoration: none;">
+                        <button class="btn btn-linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</button>
+                    </a>
+
+                    <a href="https://github.com/Marlie-Mae" target="_blank" style="text-decoration: none;">
+                        <button class="btn btn-github"><i class="fa-brands fa-github"></i> Github</button>
+                    </a>
+
+                    <a href="https://www.facebook.com/share/16gcU3dy71/" target="_blank" style="text-decoration: none;">
+                        <button class="btn btn-facebook"><i class="fa-brands fa-facebook"></i> Facebook</button>
+                    </a>
+
+                    <a href="mailto:awayanmarlie.mae@gmail.com" style="text-decoration: none;">
+                        <button class="btn btn-email"><i class="fa fa-envelope"></i> Email Me</button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        &copy; <span id="current-year"></span> Marlie Mae B. Awayan. All Rights Reserved.
+    </footer>
+</div>
+
+<script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+
+    // Theme Toggle Script
+    const themeToggle = document.getElementById('themeToggle');
+    const icon = themeToggle.querySelector('i');
+
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            icon.classList.replace('fa-sun', 'fa-moon');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+    });
+</script>
+
+<script>
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    document.onkeydown = function(e) {
+        if (event.keyCode == 123) {
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+            return false;
+        }
+    };
+</script>
+
+<script>
+    setInterval(function() {
+        debugger;
+    }, 100);
+</script>
+
+<script>
+    function openModal(imgSrc, title) {
+        const modal = document.getElementById("certModal");
+        const modalImg = document.getElementById("imgFull");
+        const captionText = document.getElementById("caption");
+        const body = document.body; 
+        
+        modal.style.display = "block";
+        modalImg.src = imgSrc;
+        captionText.innerHTML = title;
+
+        body.classList.add("no-scroll");
+    }
+
+    function closeModal() {
+        const modal = document.getElementById("certModal");
+        const body = document.body; 
+
+        modal.style.display = "none";
+
+        body.classList.remove("no-scroll");
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById("certModal");
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+</script>
+
+</body>
+</html>

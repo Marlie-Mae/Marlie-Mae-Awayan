@@ -1,0 +1,456 @@
+<!--PREVIOUS FILE-->>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marlie Mae B. Awayan | Portfolio</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f7f8fc;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* ================= HEADER ================= */
+        .profile-header {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .profile-header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .profile-info h1 {
+            color: #3556d8;
+            font-size: 24px;
+        }
+
+        .profile-info p {
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .profile-info .location {
+            color: #666;
+            font-size: 13px;
+        }
+
+        .buttons {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 14px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background: #fff;
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn.dark {
+            background: #000;
+            color: #fff;
+            border: none;
+        }
+
+        hr {
+            margin: 25px 0;
+            border: none;
+            height: 1px;
+            background: #ddd;
+        }
+
+        /* ================= GRID ================= */
+        .grid {
+            display: grid;
+            grid-template-columns: 2fr 1.3fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 18px;
+            border: 1px solid #e1e1e1;
+        }
+
+        .card h2 {
+            font-size: 16px;
+            color: #3556d8;
+            margin-bottom: 10px;
+        }
+
+        /* ================= SKILLS ================= */
+        .skills {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 30px;
+        }
+
+        /* Table Styling */
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            color: black;
+            font-size: 13px;
+        }
+
+        .tech-table th, .tech-table td {
+            border: 1px solid #3556d8;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .tech-table th {
+            background-color: white;
+            color: black;
+        }
+
+        .cat-name {
+            font-weight: bold;
+            width: 30%;
+            vertical-align: middle;
+        }
+
+        /* Badge/Pill Styling */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin: 2px;
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+        .badge i { margin-right: 5px; }
+
+        /* Colors based on your image */
+        .html { background-color: #E34F26; color: white; }
+        .css { background-color: #1572B6; color: white; }
+        .js { background-color: #F7DF1E; color: black; }
+        .php { background-color: #777BB4; color: white; }
+        .gas { background-color: #4285F4; color: white; }
+        .vscode { background-color: #007ACC; color: white; }
+        .eclipse { background-color: #2C2255; color: white; }
+        .canva { background-color: #00C4CC; color: white; }
+        .figma { background-color: #F24E1E; color: white; }
+        .mysql { background-color: #00758F; color: white; }
+
+        /* ================= PROJECTS ================= */
+        .project {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .project img {
+            width: 120px;
+            height: 90px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .project ul {
+            padding-left: 18px;
+            font-size: 13px;
+        }
+
+        .project {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+
+        .project img {
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-top: 5px;
+            color: #444;
+        }
+
+        .project p {
+            font-size: 13px;
+            color: #555;
+            margin-top: 8px;
+        }
+
+        /* ================= CERTIFICATIONS ================= */
+        .cert {
+            background: #f2f2f2;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 30px;
+            color: #666;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="profile-header">
+        <img src="profile.png" alt="Profile Image">
+        <div class="profile-info">
+            <h1>Marlie Mae B. Awayan</h1>
+            <p class="location"><i class="fa fa-location-dot"></i> Hulo, Mandaluyong Philippines</p>
+            <p>System Developer</p>
+
+            <div class="buttons">
+                <button class="btn dark"><i class="fa fa-download"></i> Download Resume</button>
+                <button class="btn"><i class="fa fa-envelope"></i> Send Email</button>
+                <button class="btn"><i class="fa fa-phone"></i> Call Me</button>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- CONTENT GRID -->
+    <div class="grid">
+
+        <!-- LEFT -->
+        <div>
+
+            <div class="card">
+                <h2><i class="fa-solid fa-address-card"></i> ABOUT</h2>
+                <p style="font-size:13px;">
+                    Aspiring IT professional seeking an internship to enhance my skills in the field of Information Technology,
+                    to gain more valuable knowledge in the IT industry, and support organizational goals with dedication and innovation.
+                </p>
+            </div>
+
+            <br>
+            <div class="card">
+                <h2><i class="fa-solid fa-wrench"></i> Tech Stack & Tools</h2>
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Tools & Languages</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="cat-name">Web Dev</td>
+                            <td>
+                                <span class="badge html"><i class="fa-brands fa-html5"></i> HTML5</span>
+                                <span class="badge css"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                                <span class="badge js"><i class="fa-brands fa-js"></i> JavaScript</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cat-name">Backend</td>
+                            <td>
+                                <span class="badge php"><i class="fa-brands fa-php"></i> PHP</span>
+                                <span class="badge mysql"><i class="fa-solid fa-database"></i> MySQL</span>
+                                <span class="badge gas"><i class="fa-solid fa-code"></i> Google Apps Script</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cat-name">Software</td>
+                            <td>
+                                <span class="badge vscode">VS Code</span>
+                                <span class="badge eclipse">Eclipse</span>
+                                <span class="badge canva">Canva</span>
+                                <span class="badge figma">Figma</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+
+            <div class="card">
+                <h2><i class="fas fa-laptop-code"></i> PROJECTS</h2>
+                <div class="project">
+                    <img src="project.jpg">
+                    <div>
+                        <strong>OnSmile: A Dynamic Web Based Solutions for Dental Enhancements Operations| Capstone Project</strong>
+                            <div class="tags">
+                                <span class="badge php">PHP</span>
+                                <span class="badge mysql">MySQL</span>
+                                <span class="badge js">JavaScript</span>
+                            </div>
+                            <p>A full-stack solution for clinics to manage patient records and automate appointment bookings, reducing scheduling conflicts by 40%.</p>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <img src="project.jpg">
+                    <div>
+                        <strong>PCN Time In Time Out: Automated Attendance Tracking System</strong>
+                            <div class="tags">
+                                <span class="badge gas">Apps Script</span>
+                                <span class="badge html">HTML</span>
+                                <span class="badge js">JavaScript</span>
+                            </div>
+                            <p>A Google Sheets-integrated solution for real-time employee "Time In/Time Out" monitoring and reporting.</p>                    </div>
+                        </div>
+
+                <div class="project">
+                    <img src="project.jpg">
+                    <div>
+                        <strong>PrivateLine: Real-Time Web Chat</strong>
+                            <div class="tags">
+                                <span class="badge gas">Apps Script</span>
+                                <span class="badge html">HTML</span>
+                                <span class="badge js">JavaScript</span>
+                            </div>
+                            <p>A secure web-based communication tool designed for low-latency messaging and private data handling.</p>                    </div>
+                    </div>
+            </div>
+
+            <br>
+
+            <div class="card">
+                <h2><i class="fas fa-user-check"></i> REFERENCES</h2>
+                <p style="font-size:13px;">
+                    <strong>May-Lane Ballita</strong><br>
+                    Dean of Information Technology<br>
+                    09500576633 | maylaneballita@gmail.com
+                </p>
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div>
+
+            <div class="card">
+                <h2><i class="fas fa-graduation-cap"></i> EDUCATION</h2>
+                <p style="font-size:13px;">
+                    <strong>Bachelor of Information Technology</strong><br>
+                    Arellano University Plaridel Campus<br>
+                    August 2022 - April 2026
+                </p>
+            </div>
+
+            <br>
+
+            <div class="card">
+                <h2><i class="fas fa-briefcase"></i> ON THE JOB TRAINING</h2>
+                <p style="font-size:13px;">
+                    <strong>Web Development Intern - PCN Promopro Inc</strong><br>
+                    December 2025 - March 2026
+                </p>
+                <ul style="padding-left:18px; font-size:12px;">
+                    <li>Developed a <b>PCN Asset Inventory System</b> in PHP and <b>Time In Time Out Attendance System</b> using <b>Google Apps Script</b> to improve real-time data collaboration.</li>
+                    <li>Conducted <b>System Maintenance</b> and hardware troubleshooting, including reformatting and software configuration for office workstations.</li>
+                    <li>Collaborated with the IT team to provide <b>Technical Support</b> and resolve network connectivity issues.</li>                
+                </ul>
+            </div>
+
+            <br>
+
+            <div class="card">
+                <h2><i class="fas fa-certificate"></i>  CERTIFICATIONS</h2>
+                <div class="cert">
+                    <strong>Introduction to Cloud Computing Webinar</strong><br>
+                    USAID
+                </div>
+                <div class="cert">
+                    <strong>Introduction to Cloud Computing Webinar</strong><br>
+                    USAID
+                </div>
+            </div>
+
+            <br>
+
+            <div class="card">
+                <h2><i class="fas fa-share-nodes"></i>  SOCIALS & LINKS</h2>
+                <div class="buttons">
+                    <button class="btn"><i class="fa fa-linkedin"></i>LinkedIn</button>
+                    <button class="btn"><i class="fa fa-github"></i>Github</button>
+                    <button class="btn"><i class="fa fa-envelope"></i>awayanmarlie mae@gmail.com</button>
+                    <button class="btn"><i class="fa fa-facebook"></i>Facebook</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        All Rights Reserved.
+    </footer>
+
+</div>
+
+</body>
+</html>
